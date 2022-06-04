@@ -1,0 +1,283 @@
+
+.form input, .form button{
+	background: rgba(0,0,0,0);
+	border:none;
+	text-align: center;
+	margin-bottom: calc(var(--indent) * 1) ;
+    width: 50vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form input {
+    display: block;
+    font-size: calc(var(--text) + 5px);
+    color: var(--white);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: calc(var(--indent) / 2.5);
+    font-weight: 700;
+    outline: none;
+}
+
+
+
+body #card-element.StripeElement {
+    display: block;
+    font-size: calc(var(--text) + 5px);
+    color: var(--white);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: calc(var(--indent) / 2.5);
+    font-weight: 700;
+    outline: none;
+    /* background: no-repeat; */
+    background: rgba(255,255,255,.7);
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid;
+    border-radius: none!important;
+    padding-bottom: calc(var(--indent) * .8 );
+}
+
+.StripeElement{
+    border-radius: none!important;
+}
+
+.order_input{
+     display: block!important;
+    font-size: calc(var(--text) + 5px)!important;
+    color: var(--white)!important;
+    text-transform: uppercase!important;
+    padding-bottom: calc(var(--indent) / 2.5)!important;
+    font-weight: 700!important;
+    outline: none!important;
+    text-align: center!important;
+    border: none!important;
+    background: inherit!important;
+    border-bottom: 1px solid var(--white)!important;
+    border-radius: 0!important;
+}
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover, 
+ input:-webkit-autofill:focus, 
+ input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px var(--background_black) inset !important;
+    font-size: calc(var(--text) + 5px)!important;
+    color: var(--white)!important;
+    
+}
+
+.form input::placeholder{
+    color:  var(--formWhite);
+}
+
+.form input.invalid{
+    border-bottom: 1px solid red;
+}
+
+
+
+.form button{
+	margin:  calc(var(--indent) * 1.5) 0;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------------------*/
+
+.InputContainer .InputElement{
+    color: white!important;
+}
+.ElementsApp, .ElementsApp .InputElement{
+    color: white!important;
+
+}
+
+.ElementsApp, .ElementsApp .InputElement{
+    color: white!important;
+
+}
+
+.wpf_form_wrapper form.wpf_label_top .wpf_form_group .wpf_form_control{
+    background: inherit!important;
+}
+
+.wpf_form_wrapper form.wpf_label_top .wpf_form_group .wpf_form_control input{
+    color: white!important;
+    border:none;
+}
+/*
+.ElementsApp, .ElementsApp .InputElement {
+
+    color: white!important;
+}
+
+
+.InputContainer{
+    color: white!important;
+
+}
+.InputContainer input{
+    color: white!important;
+
+}
+
+.CardField-input-wrapper {
+    color: white!important;
+}
+
+.CardField-input-wrapper input{
+    color: white!important;
+}
+
+
+.CardField-input-wrapper .InputContainer input{
+    color: white!important;
+}
+
+.CardBrandIcon-container .is-hidden{
+    color: white!important;
+}*/
+
+
+#wpf_input_149_stripe_card_element > div > input{
+    color: white!important;
+    
+}
+
+/*--------------------------------------------------------*/
+
+.form .star_blue {
+    width: calc(var(--satar_size) + 10px);
+    height: calc(var(--satar_size) + 10px);
+}
+
+.form .star_blue-text span{
+    font-size: calc(var(--text) - 2px);
+}
+
+.form_container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.form_container > input:first-child{
+    flex: 2;
+}
+
+.form_container > input:last-child{
+    flex: 1;
+    margin-left: 10px;
+}
+
+.order_form-choise{
+    margin-bottom: calc(var(--indent) * 2);
+}
+
+.order_form-choise ul{
+    font-style: var(--h3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order_form-choise li {
+    text-transform: uppercase;
+    font-size: var(--h3);
+    border-left: 1px solid var(--white);
+    color: var(--white);
+    cursor: pointer;
+    padding: var(--header_pop_up_li_padding);
+}
+
+.order_form-choise li:first-child{
+    border-left: none;
+    padding-left: 0;
+}
+
+
+.agreement_container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.agreement > div{
+
+}
+
+.agreement input{
+    width: var(--indent);
+    height: var(--indent);
+    border: 1px solid;
+    margin: 0 auto;
+    background: red;
+
+}
+
+.agreement input:checked{
+    background: green;
+}
+
+.agreement input:before{
+    background: red;
+
+}
+
+.agreement input:after{
+    background: red;
+    
+}
+
+.agreement p{
+    text-align: center;
+    color: var(--white);
+}
+
+
+@media screen and (max-width: 1400px){
+    .form input{
+        margin-bottom: calc(var(--indent) * 1.2);
+        padding-bottom: calc(var(--indent) / 2.5);
+
+    }
+
+}
+
+@media screen and (max-width: 1150px){
+   .form input {
+        margin-bottom: calc(var(--indent) * 1.8);
+        padding-bottom: calc(var(--indent) / 2.1);
+    }
+     
+}
+
+
+
+@media screen and (max-width: 768px){
+    .form {
+        width: 100%;
+    }
+
+    .form input {
+        width: 100%;
+    }
+
+    .form input {
+        /*font-size: calc(var(--text) + 8px);*/
+        padding-bottom: calc(var(--indent) * .8);
+        margin-bottom: calc(var(--indent) * 1.5);
+    }
+
+    #logIn_form input:first-child{
+       margin-top: calc(var(--indent) * 1);
+    }
+
+    .form button {
+        margin: calc(var(--indent) * 1.5) 0;
+        width: 100%;
+    }
+
+}
+
