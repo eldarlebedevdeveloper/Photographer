@@ -1,68 +1,64 @@
-.bread_crumbs{
-	margin: var(--indent);
+.bread_crumbs {
+  margin: var(--indent);
 }
 
-.bread_crumbs ul{
-	display: flex;
+.bread_crumbs ul {
+  display: flex;
 }
 
-.bread_crumbs li{
-	text-transform: capitalize;
-	padding: 0 8px;
-	border-left: 1px solid var(--formWhite);
-	cursor: pointer;
-	font-family: 'Roboto Slab';
-	font-style: normal;
-	font-weight: 100;
-	font-size: var(--text);
-	line-height: calc(var(--text) );
+.bread_crumbs li {
+  text-transform: capitalize;
+  padding: 0 8px;
+  border-left: 1px solid var(--formWhite);
+  cursor: pointer;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 100;
+  font-size: var(--text);
+  line-height: calc(var(--text));
 }
 
-.bread_crumbs li:first-child{
-	padding-left: 0;
-	border-left: none;
-	color: var(--formWhite);
+.bread_crumbs li:first-child {
+  padding-left: 0;
+  border-left: none;
+  color: var(--formWhite);
 }
 
-
-@media screen and (max-width: 1150px){
-	.bread_crumbs li{
-		padding: 0 8px;
-	}
+@media screen and (max-width: 1150px) {
+  .bread_crumbs li {
+    padding: 0 8px;
+  }
 }
 
-@media screen and (max-width: 768px){
-	.bread_crumbs {
-		margin-top: 15vw;
-	}
+@media screen and (max-width: 768px) {
+  .bread_crumbs {
+    margin-top: 15vw;
+  }
 
-	.bread_crumbs ul {
-	    line-height: 13px;
-	}
-	.bread_crumbs li{
-		font-size: calc(--var(--text) );
-    	padding: 0 8px;
-		line-height: calc(var(--text) * 1);
-
-
-	}
+  .bread_crumbs ul {
+    line-height: 13px;
+  }
+  .bread_crumbs li {
+    font-size: calc(--var(--text));
+    padding: 0 8px;
+    line-height: calc(var(--text) * 1);
+  }
 }
 
-
-@media screen and (max-width: 600px){
-	.bread_crumbs {
-		margin-top: 13vw;
-	}
+@media screen and (max-width: 600px) {
+  .bread_crumbs {
+    margin-top: 13vw;
+  }
 }
 
-@media screen and (max-width: 500px){
-	.bread_crumbs {
-		margin-top: 10vw;
-	}
+@media screen and (max-width: 500px) {
+  .bread_crumbs {
+    margin-top: 10vw;
+  }
 }
 
-@media screen and (max-width: 400px){
-	.bread_crumbs {
-		margin-top: 8vw;
-	}
+@media screen and (max-width: 400px) {
+  .bread_crumbs {
+    margin-top: 8vw;
+  }
 }

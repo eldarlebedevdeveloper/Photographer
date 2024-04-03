@@ -1,134 +1,124 @@
 .gallery_header {
-    margin: var(--indent);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid;
+  margin: var(--indent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
 }
 
-.gallery_header-headline{
-	text-decoration: none;
-    line-height: calc(var(--heading) - 15px);
-    align-self: flex-end;
+.gallery_header-headline {
+  text-decoration: none;
+  line-height: calc(var(--heading) - 15px);
+  align-self: flex-end;
 }
 
 .gallery_header-headline span {
-    line-height: 6vw;
-    clip-path: polygon(0 0, 100% 0, 100% 74%, 0 74%);
+  line-height: 6vw;
+  clip-path: polygon(0 0, 100% 0, 100% 74%, 0 74%);
 }
 
-.gallery_header-headline  > p:after {
-    display: none;
+.gallery_header-headline > p:after {
+  display: none;
 }
 
-/*.gallery_header-headline span:after {
-    content: "";
-    background: var(--black);
-    display: block;
-    width: 100%;
-    height: 12px;
-}*/
-
-.gallery_header-hashtags .hashtags{
-    width: 100%;
-	position: relative;
-	margin-left:  calc(var(--indent) / 2);
+.gallery_header-hashtags .hashtags {
+  width: 100%;
+  position: relative;
+  margin-left: calc(var(--indent) / 2);
 }
 
-.gallery_products{
-    margin-left: var(--indent);
+.gallery_products {
+  margin-left: var(--indent);
 }
 
-.gallery_products.swiper-container{
-    /*overflow: ;*/
-    min-height: 100vh;
+.gallery_products.swiper-container {
+  min-height: 100vh;
 }
 
-.gallery_products .product{
-    /*width: 60vw;*/
+.gallery_products .hashtags {
+  margin-left: -5px;
 }
 
-.gallery_products .hashtags{
-    margin-left: -5px;
+.hideProduct {
+  animation: hideProduct 0.5s ease forwards;
 }
 
-
-.hideProduct{
-    animation: hideProduct .5s ease forwards;
+.showProduct {
+  animation: showProduct 0.5s ease forwards;
 }
 
-.showProduct{
-    animation: showProduct .5s ease forwards;
+@keyframes hideProduct {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@keyframes hideProduct{
-    0%{ opacity: 1;}
-    100%{opacity: 0;}
+@keyframes showProduct {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes showProduct{
-    0%{ opacity: 0;}
-    100%{opacity: 1; }
-}
+@media screen and (max-width: 768px) {
+  .gallery {
+    margin-top: calc(var(--indent) * 2);
+    margin-bottom: calc(var(--indent) * 3);
+  }
 
+  .gallery_header {
+    align-items: flex-end;
+  }
 
+  .gallery_header-headline {
+    flex: 1;
+    margin-right: calc(var(--indent) / 2);
+  }
 
-/* Sorting in gallery*/
+  .gallery_header-headline p {
+    margin-top: 0;
+  }
 
+  .gallery_header-headline > p {
+    height: 10vw;
+  }
 
-@media screen and (max-width: 768px){
-    .gallery{
-        margin-top: calc(var(--indent) * 2);
-        margin-bottom: calc(var(--indent) * 3);
-    }
+  .gallery_header-headline span {
+    line-height: 13vw;
+    transform: rotate(7deg) translateX(0vw) translateY(10vw);
+  }
 
-    .gallery_header {
-        align-items: flex-end;
-    }
+  .gallery_header-hashtags {
+    overflow-x: scroll;
+    flex: 9;
+    margin-right: calc(var(--indent) * -1);
+  }
 
-    .gallery_header-headline{
-        flex: 1;
-        margin-right: calc(var(--indent) / 2)
-    }
+  /* хром, сафари */
+  .gallery_header-hashtags::-webkit-scrollbar {
+    height: 0;
+  }
 
-    .gallery_header-headline p{
-        margin-top: 0;
-    }
+  /* ie 10+ */
+  .gallery_header-hashtags {
+    -ms-overflow-style: none;
+  }
 
-    .gallery_header-headline > p {
-        height: 10vw;
-    }
+  /* фф (свойство больше не работает, других способов тоже нет)*/
+  .gallery_header-hashtags {
+    overflow: -moz-scrollbars-none;
+  }
 
-    .gallery_header-headline span {
-        line-height: 13vw;
-        transform: rotate(7deg) translateX(0vw) translateY(10vw);
+  .gallery_products .hashtags {
+    margin-left: 0;
+  }
 
-    }
-
-
-
-
-    .gallery_header-hashtags {
-        overflow-x: scroll;
-        flex: 9;
-        margin-right: calc(var(--indent) * -1);
-    }
-
-    /* хром, сафари */
-    .gallery_header-hashtags::-webkit-scrollbar { height: 0; }
-
-    /* ie 10+ */
-    .gallery_header-hashtags{ -ms-overflow-style: none; }
-
-    /* фф (свойство больше не работает, других способов тоже нет)*/
-    .gallery_header-hashtags{ overflow: -moz-scrollbars-none; }
-
-
-    .gallery_products .hashtags {
-        margin-left: 0;
-    }
-
-    .gallery_header-hashtags .hashtags ul{
-        flex-wrap: nowrap;
-    }
+  .gallery_header-hashtags .hashtags ul {
+    flex-wrap: nowrap;
+  }
 }

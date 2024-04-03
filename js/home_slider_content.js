@@ -1,49 +1,36 @@
-
-
 window.onload = () => {
-	// home_slider_content.js
-	getHomeSliderContent()
-	// mainSlider()
-
+  getHomeSliderContent()
 }
 
-function getHomeSliderContent(){
-    let container = document.querySelector('#home_slider_container')
+function getHomeSliderContent() {
+  let container = document.querySelector('#home_slider_container')
+  let allTitles = createClearArray(
+    document.querySelector('#back_end_slider_tittle').textContent
+  )
+  let allText = createClearArray(
+    document.querySelector('#back_end_slider_text').textContent
+  )
+  let allPuctures = createClearArray(
+    document.querySelector('#back_end_slider_pictures').textContent
+  )
+  let newAllTitles = []
 
-    let allTitles = createClearArray(document.querySelector('#back_end_slider_tittle').textContent)
-    let allText = createClearArray(document.querySelector('#back_end_slider_text').textContent)
-    let allPuctures = createClearArray(document.querySelector('#back_end_slider_pictures').textContent)
+  createNewTitleArray()
+  function createNewTitleArray() {
+    allTitles.forEach((title, index) => {
+      allTitles[index] = clearAndCreateArray(title, ',')
+    })
+  }
 
+  createSlides()
+  function createSlides() {
+    allTitles.forEach((slide, index) => {
+      let oneSlide = createSlide(index)
+      container.innerHTML += oneSlide
+    })
 
-    let newAllTitles = []
-    
-    createNewTitleArray()
-    function createNewTitleArray(){
-        allTitles.forEach((title, index) => {
-            allTitles[index] = clearAndCreateArray(title, ',')
-
-        })
-    }
-  
-    
-    createSlides()
-    function createSlides(){
-   
-        // console.log(slide)
-
-        // // container.innerHTML = slide
-
-        allTitles.forEach((slide,index) => {
-            let oneSlide =  createSlide(index)
-            // console.log(oneSlide)
-
-            container.innerHTML += oneSlide
-
-        })
-
-
-        function createSlide(ind){
-            let slide = `<div class="home_slide home_slide-one swiper-slide">
+    function createSlide(ind) {
+      let slide = `<div class="home_slide home_slide-one swiper-slide">
                             <div class="home_slide-container">
                                 <img class="home_slide-picture " src="${allPuctures[ind]}" alt="">
                                 <div class="home_slide-text ">
@@ -61,34 +48,28 @@ function getHomeSliderContent(){
                             </div>
                         </div>`
 
-            return slide
-        }
-
+      return slide
     }
+  }
 
+  function createClearArray(requestArray) {
+    let oneArray = clearAndCreateArray(requestArray, ']')
+    let twoArray = clearAndCreateArray(oneArray, '[')
+    let finnalyText = twoArray.filter((item) => item != undefined)
+    return finnalyText
+  }
 
-
-    function createClearArray(requestArray){
-        let oneArray  = clearAndCreateArray(requestArray, ']');
-        let twoArray = clearAndCreateArray(oneArray, '[');
-        let finnalyText = twoArray.filter(item => item != undefined)
-        return finnalyText
+  function clearAndCreateArray(stringToSplit, separator) {
+    if (typeof stringToSplit == 'string') {
+      let arrayOfStrings = stringToSplit.split(separator)
+      return arrayOfStrings
+    } else {
+      let newArray = []
+      stringToSplit.forEach((element) => {
+        let d = element.split(separator)[1]
+        newArray.push(d)
+      })
+      return newArray
     }
-
-
-    function clearAndCreateArray(stringToSplit, separator) {
-        if(typeof stringToSplit == 'string'){
-            let arrayOfStrings = stringToSplit.split(separator)
-            return arrayOfStrings
-
-        }else{
-            let newArray = []
-            stringToSplit.forEach(element => {
-                // console.log(element)
-                let d = element.split(separator)[1]
-                newArray.push(d)
-            })
-            return newArray
-        }
-      }
-}       
+  }
+}

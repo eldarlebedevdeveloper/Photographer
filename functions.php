@@ -1,45 +1,33 @@
-<?php function photographerBreadCrumbs($product){ ?>
+<?php function photographerBreadCrumbs($product)
+{ ?>
 	<div class="bread_crumbs">
 		<ul>
 			<li><a href="<?php site_url(); ?>/">home</a></li>
 			<li><a href="<?php site_url(); ?>/gallery/">gallery</a></li>
-			<?php if($product == true){?>
+			<?php if ($product == true) { ?>
 				<li><a href="#">ID <?php echo $product; ?></a></li>
 			<?php } ?>
 		</ul>
 	</div>
 <?php } ?>
-<?php 
-
-	
-function blog_setup(){
+<?php
+function blog_setup()
+{
 	// потдержка сабнейлов(картинок) к постам
 	add_theme_support('post-thumbnails');
-	// ширина и высота сабнейлов(картинок)
-	set_post_thumbnail_size(870,480);
-
-
-
+	set_post_thumbnail_size(870, 480);
 }
-
 add_action('after_setup_theme', 'blog_setup');
 
-
-
 // Скрываем админ панель
-add_action( 'after_setup_theme', function(){
-	show_admin_bar( false );
+add_action('after_setup_theme', function () {
+	show_admin_bar(false);
 });
 
-
-
 ## заменим слово «записи» на «статьи»
-//$labels = apply_filters( "post_type_labels_{$post_type}", $labels );
 add_filter('post_type_labels_post', 'rename_posts_labels');
-function rename_posts_labels( $labels ){
-	// заменять автоматически не пойдет например заменили: Запись = Статья, а в тесте получится так "Просмотреть статья"
-
-
+function rename_posts_labels($labels)
+{
 
 	$new = array(
 		'name'                  => 'Products',
@@ -64,6 +52,5 @@ function rename_posts_labels( $labels ){
 		'menu_name'             => 'Products',
 		'name_admin_bar'        => 'Product', // пункте "добавить"
 	);
-
-	return (object) array_merge( (array) $labels, $new );
+	return (object) array_merge((array) $labels, $new);
 }

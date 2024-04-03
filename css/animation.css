@@ -1,219 +1,193 @@
-.c-show{
-	animation: showCart .6s ease forwards;
+.c-show {
+  animation: showCart 0.6s ease forwards;
 }
 
-.c-shadow{
-	animation: shadowCart .6s ease forwards;
+.c-shadow {
+  animation: shadowCart 0.6s ease forwards;
 }
 
-@keyframes showCart{
-	from{
-		right: calc((var(--cart_width) + calc(var(--indent) * 2)) * -1);
-	}
-	to{
-		right: 0;
-	}
+@keyframes showCart {
+  from {
+    right: calc((var(--cart_width) + calc(var(--indent) * 2)) * -1);
+  }
+  to {
+    right: 0;
+  }
 }
 
-@keyframes shadowCart{
-	from{
-		right: 0;
-	}
-	to{
-		right: calc((var(--cart_width) + calc(var(--indent) * 2)) * -1);
-	}
+@keyframes shadowCart {
+  from {
+    right: 0;
+  }
+  to {
+    right: calc((var(--cart_width) + calc(var(--indent) * 2)) * -1);
+  }
 }
 
-
-
-.p-show{
-	animation: showPopUp .5s ease forwards;
+.p-show {
+  animation: showPopUp 0.5s ease forwards;
 }
 
-.p-shadow{
-	animation: shadowPopUp .5s ease forwards;
+.p-shadow {
+  animation: shadowPopUp 0.5s ease forwards;
 }
 
-
-@keyframes showPopUp{
-	from{
-		top: -100vh;
-	}
-	to{
-		top: 0;
-	}
+@keyframes showPopUp {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
 }
 
-@keyframes shadowPopUp{
-	from{
-		top: 0;
-	}
-	to{
-		top: -100vh;
-	}
+@keyframes shadowPopUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
 }
 
-/*________________________________________________*/
-/*________________________________________________*/
-
-
-.header_animation{
-	animation: headerAnimation 1s cubic-bezier(1,-0.05,.89,.82) 1s forwards;
+.header_animation {
+  animation: headerAnimation 1s cubic-bezier(1, -0.05, 0.89, 0.82) 1s forwards;
 }
-
 
 @keyframes headerAnimation {
-	from{
-		top: -5vw;
-	}
-	to{
-		top: 0;
-	}
+  from {
+    top: -5vw;
+  }
+  to {
+    top: 0;
+  }
 }
 
-
-
-
-/*________________________________________________*/
-
-.home_scroll_animation{
-	animation: homeScrollAnimation 1s linear 1s forwards;
-
+.home_scroll_animation {
+  animation: homeScrollAnimation 1s linear 1s forwards;
 }
+
 @keyframes homeScrollAnimation {
-	from{
-		display: block;
-		opacity: 0;
-		bottom: calc(var(--satar_size) / 1 * -1);
-	}
-	to{
-		opacity: 1;
-		bottom: calc(var(--satar_size) / 2 * -1);
-	}
-}
-
-/*________________________________________________*/
-
-.text_animation{
-	display: flex;
-}
-.text_animation:before {
-    position: absolute;
-    content: "";
+  from {
     display: block;
-    width: 10px;
-    background: var(--blue);
-    height: 0%;
-    left: -10px;
-    animation: textBorderLeft 1s linear 1s forwards;
+    opacity: 0;
+    bottom: calc(var(--satar_size) / 1 * -1);
+  }
+  to {
+    opacity: 1;
+    bottom: calc(var(--satar_size) / 2 * -1);
+  }
 }
-.text_animation span{
-	display: block;
-    color: var(--blackSmall);
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border-bottom-right-radius: 100%;
-    animation: textBoxShow 1s linear 1s  forwards;
-	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 
+.text_animation {
+  display: flex;
+}
+
+.text_animation:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  background: var(--blue);
+  height: 0%;
+  left: -10px;
+  animation: textBorderLeft 1s linear 1s forwards;
+}
+
+.text_animation span {
+  display: block;
+  color: var(--blackSmall);
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-bottom-right-radius: 100%;
+  animation: textBoxShow 1s linear 1s forwards;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 @keyframes textBorderLeft {
-	from{
-		height: 0%;
-	}
-	to{
-		height: 120%;
-	}
+  from {
+    height: 0%;
+  }
+  to {
+    height: 120%;
+  }
 }
 @keyframes textBoxShow {
-	0%{
-    	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);	
-	}
-	50%{
-		clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
-
-	}
-	100%{
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	}
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
-
 
 /*___________________анимация заголовкоа ______________________________*/
-.heading_animation span{
-    transform: rotate(7deg) translateX(0vw) translateY(5vw);	
-    animation: headingSurfacing .5s ease-out 1.5s forwards;
+.heading_animation span {
+  transform: rotate(7deg) translateX(0vw) translateY(5vw);
+  animation: headingSurfacing 0.5s ease-out 1.5s forwards;
 }
-
-
-
 
 .heading_animation > p:after {
-	width: 0%;
-    animation: headingLine 1s ease 1s forwards;
+  width: 0%;
+  animation: headingLine 1s ease 1s forwards;
 }
 
-
-@keyframes headingSurfacing{
-	0%{
-  		transform: rotate(7deg) translateX(0vw) translateY(10vw);
-	}
-	50%{
-  		transform: rotate(3deg) translateX(.1vw) translateY(0vw);
-	}
-	100%{
-  		transform: rotate(0deg) translateX(.1vw) translateY(0vw);
-	}
+@keyframes headingSurfacing {
+  0% {
+    transform: rotate(7deg) translateX(0vw) translateY(10vw);
+  }
+  50% {
+    transform: rotate(3deg) translateX(0.1vw) translateY(0vw);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0.1vw) translateY(0vw);
+  }
 }
 
 @keyframes headingLine {
-	from{
-  	 	width: 0%;
-	}
-	to{
-  	 	width: 150%;
-	}
+  from {
+    width: 0%;
+  }
+  to {
+    width: 150%;
+  }
 }
 
+@media screen and (max-width: 768px) {
+  .text_animation:before {
+    left: var(--indent);
+  }
 
-@media screen and (max-width: 768px){
-	.text_animation:before {
-	    left: var(--indent);
-	}
+  .heading_animation span {
+    transform: rotate(7deg) translateX(0vw) translateY(12vw);
+  }
 
-	.heading_animation span{
-	    transform: rotate(7deg) translateX(0vw) translateY(12vw);
-	}
+  .header_animation {
+    animation: headerAnimation 1s cubic-bezier(1, -0.05, 0.89, 0.82) 1s forwards;
+  }
 
+  @keyframes headerAnimation {
+    from {
+      top: -13vw;
+    }
+    to {
+      top: 0;
+    }
+  }
 
-	.header_animation{
-		animation: headerAnimation 1s cubic-bezier(1,-0.05,.89,.82) 1s forwards;
-	}
-	
-	
-	@keyframes headerAnimation {
-		from{
-			top: -13vw;
-		}
-		to{
-			top: 0;
-		}
-	}
-
-	
-
-	@keyframes headingSurfacing{
-		0%{
-	  		transform: rotate(7deg) translateX(0vw) translateY(15vw);
-		}
-		50%{
-	  		transform: rotate(3deg) translateX(.1vw) translateY(0vw);
-		}
-		100%{
-	  		transform: rotate(0deg) translateX(.1vw) translateY(0vw);
-		}
-	}
-
+  @keyframes headingSurfacing {
+    0% {
+      transform: rotate(7deg) translateX(0vw) translateY(15vw);
+    }
+    50% {
+      transform: rotate(3deg) translateX(0.1vw) translateY(0vw);
+    }
+    100% {
+      transform: rotate(0deg) translateX(0.1vw) translateY(0vw);
+    }
+  }
 }
